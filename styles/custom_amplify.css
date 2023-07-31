@@ -1,0 +1,79 @@
+[data-amplify-authenticator][data-variation="modal"] {
+  overflow-y: auto;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: #16181a !important;
+  background-position: center;
+  background-image: url(https://d2jrlxlki1tjmb.cloudfront.net/aye-external-assets/gradient-light-effect-1.svg),
+    url(https://d2jrlxlki1tjmb.cloudfront.net/aye-external-assets/gradient-light-effect-2.svg) !important;
+  background-position: left, right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  z-index: 1;
+}
+
+[data-amplify-authenticator] [data-amplify-router] {
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  border-color: none !important;
+  border-width: none !important;
+  border-style: none !important;
+  background-image: url(https://d2jrlxlki1tjmb.cloudfront.net/aye-external-assets/gradient-light-effect-1.svg),
+    url(https://d2jrlxlki1tjmb.cloudfront.net/aye-external-assets/gradient-light-effect-2.svg) !important;
+  background-position: left, right;
+  background-repeat: no-repeat;
+  border-radius: 1rem;
+}
+
+[data-amplify-authenticator] [data-amplify-router] * {
+  border-radius: 1rem;
+  font-weight: 300 !important;
+  border-color: gray;
+}
+
+[data-amplify-authenticator]
+  [data-amplify-router]
+  div
+  div
+  .amplify-tabs
+  button:nth-child(1) {
+  border-radius: 1rem 0 1rem 0 !important;
+}
+
+[data-amplify-authenticator]
+  [data-amplify-router]
+  div
+  div
+  .amplify-tabs
+  button:nth-child(2) {
+  border-radius: 0 1rem 0 1rem !important;
+}
+
+.amplify-tabs-item[data-state="active"] {
+  border: none !important;
+  background-color: var(--amplify-components-tabs-item-active-background-color);
+  transition-property: none;
+}
+
+[data-amplify-authenticator]
+  [data-amplify-router]
+  div
+  div
+  .amplify-tabs
+  button:nth-child(2) {
+  border-radius: 0 1rem 0 1rem !important;
+}
+
+.amplify-tabs-item {
+  border: none !important;
+}
+
+[data-indicator-position="top"] > .amplify-tabs-item {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.amplify-tabs {
+  border: none !important;
+}

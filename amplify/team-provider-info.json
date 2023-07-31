@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-aiimageapp-dev-234610-authRole",
+      "UnauthRoleArn": "arn:aws:iam::690285402100:role/amplify-aiimageapp-dev-234610-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::690285402100:role/amplify-aiimageapp-dev-234610-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-aiimageapp-dev-234610-deployment",
+      "UnauthRoleName": "amplify-aiimageapp-dev-234610-unauthRole",
+      "StackName": "amplify-aiimageapp-dev-234610",
+      "StackId": "arn:aws:cloudformation:ap-south-1:690285402100:stack/amplify-aiimageapp-dev-234610/587df630-2660-11ee-8658-06b504eeac98",
+      "AmplifyAppId": "d1i9xb0i2hocga"
+    },
+    "categories": {
+      "auth": {
+        "aiimageapp5d513763": {}
+      },
+      "storage": {
+        "ayecasoStore": {}
+      },
+      "api": {
+        "aiimageapp": {}
+      }
+    }
+  }
+}

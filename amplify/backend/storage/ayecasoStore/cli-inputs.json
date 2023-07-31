@@ -1,0 +1,14 @@
+{
+  "resourceName": "ayecasoStore",
+  "policyUUID": "1e63bbe6",
+  "bucketName": "ayecaso-bucket",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

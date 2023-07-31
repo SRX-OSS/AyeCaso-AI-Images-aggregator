@@ -1,0 +1,117 @@
+type ImagePost
+  @model
+  @auth(
+    rules: [
+      { allow: public, operations: [read, update] }
+      {
+        allow: owner
+        ownerField: "user_id"
+        operations: [read, create, update, delete]
+      }
+    ]
+  )
+  @searchable {
+  id: ID! @primaryKey
+  user_id: ID!
+    @index(
+      name: "byUser"
+      queryField: "profilePostByDate"
+      sortKeyFields: ["createdAt"]
+    )
+    @index(
+      name: "byViews"
+      queryField: "profilePostByViews"
+      sortKeyFields: ["viewsCount"]
+    )
+  gallery_id: ID
+    @index(
+      name: "byGallery"
+      queryField: "galleryPostByDate"
+      sortKeyFields: ["createdAt"]
+    )
+  title: String!
+  imageKey: String!
+  description: String
+  creator_model: String
+  likesCount: Int
+  viewsCount: Int
+  isPrivate: Boolean
+  isCopyrighted: Boolean
+  isNSFW: Boolean
+  tags: [String]
+  category: String
+  createdAt: String!
+}
+
+type User
+  @model
+  @auth(
+    rules: [
+      { allow: public, operations: [read, update] }
+      {
+        allow: owner
+        ownerField: "id"
+        operations: [read, create, update, delete]
+      }
+    ]
+  ) {
+  id: ID! @primaryKey
+  username: String!
+  tagline: String
+  likesCount: Int
+  reachCount: Int
+  isDisabled: Boolean
+  picture: String
+  theme: String
+  dob: AWSDateTime
+  links: [String]
+  communication_emails: Boolean
+  marketing_emails: Boolean
+  social_emails: Boolean
+  security_emails: Boolean
+}
+
+type Gallery
+  @model
+  @auth(
+    rules: [
+      { allow: public, operations: [read, update] }
+      {
+        allow: owner
+        ownerField: "user_id"
+        operations: [read, create, update, delete]
+      }
+    ]
+  ) {
+  id: ID! @primaryKey
+  user_id: ID! @index(name: "byUser")
+  gallery_name: String!
+  gallery_description: String
+  isPrivate: Boolean
+  avatar: String
+  post_counts: Int
+}
+
+type Saved @model @auth(rules: [{ allow: public }]) {
+  id: ID! @primaryKey
+  user_id: ID!
+    @index(
+      name: "byUser"
+      queryField: "savedPostByDate"
+      sortKeyFields: ["createdAt"]
+    )
+  createdAt: String!
+}
+
+type Liked @model @auth(rules: [{ allow: public }]) {
+  id: ID! @primaryKey
+}
+
+type Support @model @auth(rules: [{ allow: public }]) {
+  id: ID! @primaryKey
+  user_id: ID
+  email: String!
+  issue_type: String!
+  subject: String!
+  details: String
+}
